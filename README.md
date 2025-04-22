@@ -1,0 +1,1 @@
+# samsung-health-data-api
