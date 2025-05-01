@@ -4,11 +4,8 @@ from typing import List, Optional
 class SkinTemperatureItem(BaseModel):
     DATA_UUID: str
     START_TIME: int
-    END_TIME: int
     TIME_OFFSET: int
-    TEMPERATURE: float
-    MIN: float
-    MAX: float
+    MEAN: float
 
 class SkinTemperatureRequest(BaseModel):
     USER_UUID: str
@@ -20,9 +17,10 @@ class BloodPressureItem(BaseModel):
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
-    SYSTOLIC: int
-    DIASTOLIC: int
-    PULSE: int
+    SYSTOLIC: float
+    DIASTOLIC: float
+    MEAN: int
+    PULSE_RATE: int
 
 class BloodPressureRequest(BaseModel):
     USER_UUID: str
@@ -34,7 +32,9 @@ class BloodGlucoseItem(BaseModel):
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
-    GLUCOSE: float
+    GLUCOSE_LEVEL: float
+    INSULIN_INJECTED: float
+    MEASUREMENT_TYPE: str
 
 class BloodGlucoseRequest(BaseModel):
     USER_UUID: str
@@ -46,7 +46,10 @@ class BloodOxygenItem(BaseModel):
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
-    OXYGEN: float
+    SPO2: float
+    HEART_RATE: float
+    MIN: float
+    MAX: float
 
 class BloodOxygenRequest(BaseModel):
     USER_UUID: str
@@ -58,7 +61,9 @@ class HeartRateItem(BaseModel):
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
-    HEART_RATE: int
+    HEART_RATE: float
+    MIN: float
+    MAX: float
 
 class HeartRateRequest(BaseModel):
     USER_UUID: str
@@ -70,8 +75,14 @@ class SleepSessionItem(BaseModel):
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
-    SLEEP_STAGE: Optional[str] = None
-    DURATION: int
+    SLEEP_SECONDS: int
+    AWAKE_SECONDS: int
+    REM_SECONDS: int
+    LIGHT_SECONDS: int
+    DEEP_SECONDS: int
+    UNKNOWN_SECONDS: int
+    MAX_OXYGEN: int
+    MIN_OXYGEN: int
 
 class SleepSessionRequest(BaseModel):
     USER_UUID: str
