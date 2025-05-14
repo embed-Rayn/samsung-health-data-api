@@ -1,11 +1,15 @@
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List
 
 class SkinTemperatureItem(BaseModel):
     DATA_UUID: str
     START_TIME: int
+    END_TIME: int
     TIME_OFFSET: int
     MEAN: float
+    TEMPERATURE: float
+    MIN: float
+    MAX: float
 
 class SkinTemperatureRequest(BaseModel):
     USER_UUID: str
@@ -47,7 +51,6 @@ class BloodOxygenItem(BaseModel):
     END_TIME: int
     TIME_OFFSET: int
     SPO2: float
-    HEART_RATE: float
     MIN: float
     MAX: float
 
@@ -91,12 +94,11 @@ class SleepSessionRequest(BaseModel):
 
 class StepDailyItem(BaseModel):
     DATA_UUID: str
+    DAY_TIME: int
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
     STEPS: int
-    DISTANCE: Optional[float] = None
-    CALORIES: Optional[float] = None
 
 class StepDailyRequest(BaseModel):
     USER_UUID: str

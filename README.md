@@ -38,6 +38,7 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/dbname
 4. 서버 실행
 ```bash
 uvicorn app.main:app --host $ADDRESS --port $PORT --reload
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 
