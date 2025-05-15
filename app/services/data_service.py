@@ -9,7 +9,7 @@ def save_data(data):
 
     # 파일명: 데이터 타입_타임스탬프.json
     data_type = getattr(data, "DATA_TYPE", "unknown")
-    timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f") 
     filename = f"{data_type}_{timestamp}.json"
     filepath = os.path.join(save_dir, filename)
 

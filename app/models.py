@@ -6,7 +6,6 @@ class SkinTemperatureItem(BaseModel):
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
-    MEAN: float
     TEMPERATURE: float
     MIN: float
     MAX: float
@@ -23,7 +22,7 @@ class BloodPressureItem(BaseModel):
     TIME_OFFSET: int
     SYSTOLIC: float
     DIASTOLIC: float
-    MEAN: int
+    MEAN: float
     PULSE_RATE: int
 
 class BloodPressureRequest(BaseModel):
@@ -95,10 +94,10 @@ class SleepSessionRequest(BaseModel):
 class StepDailyItem(BaseModel):
     DATA_UUID: str
     DAY_TIME: int
-    START_TIME: int
-    END_TIME: int
-    TIME_OFFSET: int
-    STEPS: int
+    COUNT: int
+    CALORIE: float
+    CALORIE: float
+    SPEED: float
 
 class StepDailyRequest(BaseModel):
     USER_UUID: str
