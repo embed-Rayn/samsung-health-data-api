@@ -3,6 +3,8 @@ from typing import List
 
 class SkinTemperatureItem(BaseModel):
     DATA_UUID: str
+    HOSPITAL_CODE: str
+    USER_CODE: int
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
@@ -17,6 +19,8 @@ class SkinTemperatureRequest(BaseModel):
 
 class BloodPressureItem(BaseModel):
     DATA_UUID: str
+    HOSPITAL_CODE: str
+    USER_CODE: int
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
@@ -32,6 +36,8 @@ class BloodPressureRequest(BaseModel):
 
 class BloodGlucoseItem(BaseModel):
     DATA_UUID: str
+    HOSPITAL_CODE: str
+    USER_CODE: int
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
@@ -46,6 +52,8 @@ class BloodGlucoseRequest(BaseModel):
 
 class BloodOxygenItem(BaseModel):
     DATA_UUID: str
+    HOSPITAL_CODE: str
+    USER_CODE: int
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
@@ -60,6 +68,8 @@ class BloodOxygenRequest(BaseModel):
 
 class HeartRateItem(BaseModel):
     DATA_UUID: str
+    HOSPITAL_CODE: str
+    USER_CODE: int
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
@@ -74,6 +84,8 @@ class HeartRateRequest(BaseModel):
 
 class SleepSessionItem(BaseModel):
     DATA_UUID: str
+    HOSPITAL_CODE: str
+    USER_CODE: int
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
@@ -93,6 +105,8 @@ class SleepSessionRequest(BaseModel):
 
 class StepDailyItem(BaseModel):
     DATA_UUID: str
+    HOSPITAL_CODE: str
+    USER_CODE: int
     DAY_TIME: int
     COUNT: int
     CALORIE: float
