@@ -42,8 +42,36 @@ uvicorn app.main:app --host $ADDRESS --port $PORT --reload
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-### 4-2 서비스 
+### 4-2 서비스 등록(최초 1회)
+로그 보기
+```bash
+journalctl -u health-api -f
+```
+```bash
+sudo vim /etc/systemd/system/health-api.service
+```
+아래 등록
+```
+[Unit]
+Description=Samsung Health Data API (FastAPI)
+After=network.target
 
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/Downloads/samsung-health-data-api
+Environment="PATH=/home/ubuntu/miniconda3/envs/fastapi/bin"
+ExecStart=/home/ubuntu/miniconda3/envs/fastapi/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload --log-level debug
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+```
+sudo systemctl daemon-reload
+sudo systemctl restart health-api.service
+sudo systemctl status health-api.service
+```
 ## 디렉토리 설명
 - app/main.py
     - 애플리케이션 생성 및 라우터 등록
