@@ -108,7 +108,7 @@ class StepDailyItem(BaseModel):
     DAY_TIME: int
     COUNT: int
     CALORIE: float
-    CALORIE: float
+    DISTANCE: float
     SPEED: float
 
 class StepDailyRequest(BaseModel):
