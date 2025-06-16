@@ -4,7 +4,7 @@ from datetime import datetime
 
 def save_data(data):
     # 저장 디렉토리 생성
-    save_dir = "data"
+    save_dir = "/workspace/8889/data"
     os.makedirs(save_dir, exist_ok=True)
 
     # 파일명: 데이터 타입_타임스탬프.json
