@@ -36,11 +36,13 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/dbname
 ```
 
 4. 서버 실행
+### 4-1 간단
 ```bash
 uvicorn app.main:app --host $ADDRESS --port $PORT --reload
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
+### 4-2 서비스 
 
 ## 디렉토리 설명
 - app/main.py

@@ -3,8 +3,6 @@ from typing import List
 
 class SkinTemperatureItem(BaseModel):
     DATA_UUID: str
-    HOSPITAL_CODE: str
-    USER_CODE: str
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
@@ -15,12 +13,12 @@ class SkinTemperatureItem(BaseModel):
 class SkinTemperatureRequest(BaseModel):
     USER_UUID: str
     DATA_TYPE: str
+    HOSPITAL_CODE: str
+    USER_CODE: str
     DATA_LIST: List[SkinTemperatureItem]
 
 class BloodPressureItem(BaseModel):
     DATA_UUID: str
-    HOSPITAL_CODE: str
-    USER_CODE: str
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
@@ -32,12 +30,12 @@ class BloodPressureItem(BaseModel):
 class BloodPressureRequest(BaseModel):
     USER_UUID: str
     DATA_TYPE: str
+    HOSPITAL_CODE: str
+    USER_CODE: str
     DATA_LIST: List[BloodPressureItem]
 
 class BloodGlucoseItem(BaseModel):
     DATA_UUID: str
-    HOSPITAL_CODE: str
-    USER_CODE: str
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
@@ -48,12 +46,12 @@ class BloodGlucoseItem(BaseModel):
 class BloodGlucoseRequest(BaseModel):
     USER_UUID: str
     DATA_TYPE: str
+    HOSPITAL_CODE: str
+    USER_CODE: str
     DATA_LIST: List[BloodGlucoseItem]
 
 class BloodOxygenItem(BaseModel):
     DATA_UUID: str
-    HOSPITAL_CODE: str
-    USER_CODE: str
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
@@ -64,12 +62,12 @@ class BloodOxygenItem(BaseModel):
 class BloodOxygenRequest(BaseModel):
     USER_UUID: str
     DATA_TYPE: str
+    HOSPITAL_CODE: str
+    USER_CODE: str
     DATA_LIST: List[BloodOxygenItem]
 
 class HeartRateItem(BaseModel):
     DATA_UUID: str
-    HOSPITAL_CODE: str
-    USER_CODE: str
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
@@ -80,12 +78,12 @@ class HeartRateItem(BaseModel):
 class HeartRateRequest(BaseModel):
     USER_UUID: str
     DATA_TYPE: str
+    HOSPITAL_CODE: str
+    USER_CODE: str
     DATA_LIST: List[HeartRateItem]
 
 class SleepSessionItem(BaseModel):
     DATA_UUID: str
-    HOSPITAL_CODE: str
-    USER_CODE: str
     START_TIME: int
     END_TIME: int
     TIME_OFFSET: int
@@ -101,12 +99,12 @@ class SleepSessionItem(BaseModel):
 class SleepSessionRequest(BaseModel):
     USER_UUID: str
     DATA_TYPE: str
-    DATA_LIST: List[SleepSessionItem]
-
-class StepDailyItem(BaseModel):
-    DATA_UUID: str
     HOSPITAL_CODE: str
     USER_CODE: str
+    DATA_LIST: List[SleepSessionItem]
+    
+class StepDailyItem(BaseModel):
+    DATA_UUID: str
     DAY_TIME: int
     COUNT: int
     CALORIE: float
@@ -116,4 +114,6 @@ class StepDailyItem(BaseModel):
 class StepDailyRequest(BaseModel):
     USER_UUID: str
     DATA_TYPE: str
+    HOSPITAL_CODE: str
+    USER_CODE: str
     DATA_LIST: List[StepDailyItem]
