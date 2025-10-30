@@ -120,6 +120,43 @@ class StepRequest(BaseModel):
     USER_CODE: str
     DATA_LIST: Union[List[StepItem], str]
 
+# ==================== BLOOD PRESSURE (혈압) ====================
+# 명세서에 없지만 기존 코드 호환성을 위해 유지
+class BloodPressureItem(BaseModel):
+    DATA_UUID: str
+    START_TIME: int
+    END_TIME: int
+    TIME_OFFSET: int
+    SYSTOLIC: float
+    DIASTOLIC: float
+    MEAN: float
+    PULSE_RATE: int
+
+class BloodPressureRequest(BaseModel):
+    USER_UUID: str
+    DATA_TYPE: str
+    HOSPITAL_CODE: str
+    USER_CODE: str
+    DATA_LIST: Union[List[BloodPressureItem], str]
+
+# ==================== BLOOD GLUCOSE (혈당) ====================
+# 명세서에 없지만 기존 코드 호환성을 위해 유지
+class BloodGlucoseItem(BaseModel):
+    DATA_UUID: str
+    START_TIME: int
+    END_TIME: int
+    TIME_OFFSET: int
+    GLUCOSE_LEVEL: float
+    INSULIN_INJECTED: float
+    MEASUREMENT_TYPE: str
+
+class BloodGlucoseRequest(BaseModel):
+    USER_UUID: str
+    DATA_TYPE: str
+    HOSPITAL_CODE: str
+    USER_CODE: str
+    DATA_LIST: Union[List[BloodGlucoseItem], str]
+
 # ==================== 하위 호환성을 위한 별칭 ====================
 # 기존 코드와의 호환성을 위해 유지
 BloodOxygenItem = OxygenSaturationItem
