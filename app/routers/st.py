@@ -4,6 +4,6 @@ from app.services import data_service
 
 router = APIRouter()
 
-@router.post("/app/smc_uploaddata/st")
+@router.post("/app/smc_uploadjson/skin_temperature")
 async def upload_skin_temperature(data: SkinTemperatureRequest):
     return data_service.save_data(data)

@@ -4,6 +4,6 @@ from app.services import data_service
 
 router = APIRouter()
 
-@router.post("/app/smc_uploaddata/hr")
+@router.post("/app/smc_uploadjson/heart_rate")
 async def upload_heart_rate(data: HeartRateRequest):
     return data_service.save_data(data)
